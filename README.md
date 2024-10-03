@@ -18,8 +18,10 @@ This project focuses on building a neural network to classify images as either a
 
 - Built a feed forward neural network with the following architecture:
 
-  - Input layer: Each image has dimensions (num_px, num_px, 3) (where 3 represents the RGB color channels), then the total number of input features is num_px _ num_px _ 3.
-  - Single Logistic Regression Layer: - Logistic regression can be thought of as a single hidden layer - Weights (w): This is a vector of parameters with shape (num_px _ num_px _ 3, 1). Each pixel in the flattened image has an associated weight. These weights are initialized as zeros in the initialize_with_zeros(dim) function. - Bias (b): A scalar parameter that is initialized to zero. This bias allows the model to fit the data better by shifting the decision boundary. - Activation Function: The logistic regression model applies the sigmoid activation function to the weighted sum of the inputs. The function is σ(Z) where  
+  - Input layer: Each image has dimensions (num*px, num_px, 3) (where 3 represents the RGB color channels), then the total number of input features is num_px * num*px * 3.
+  - Single Logistic Regression Layer: - Logistic regression can be thought of as a single hidden layer - Weights (w): This is a vector of parameters with shape (num*px * num*px * 3, 1). Each pixel in the flattened image has an associated weight. These weights are initialized as zeros in the initialize_with_zeros(dim) function.
+  - Bias (b): A scalar parameter that is initialized to zero. This bias allows the model to fit the data better by shifting the decision boundary.
+  - Activation Function: The logistic regression model applies the sigmoid activation function to the weighted sum of the inputs. The function is σ(Z) where  
     𝑍=𝑤𝑇⋅𝑋+𝑏, This gives a probability value A between 0 and 1.
 
   - Output layer:
@@ -69,12 +71,15 @@ Run the notebook or Python scripts in the following sequence:
 ## Results 📈
 
 - Correct classification as a cat
+
   ![isacat](https://github.com/SahilTuladhar/Cat-Notcat-Recognition-model/blob/master/images/images/is_a_cat.png)
 
 - Correct classification as car is not a cat
+
   ![isnotacat](https://github.com/SahilTuladhar/Cat-Notcat-Recognition-model/blob/master/images/images/is_not_a_cat.png)
 
 - Misclassification as some images of dog may have similar properties to a cat
+
   ![misclassify](https://github.com/SahilTuladhar/Cat-Notcat-Recognition-model/blob/master/images/images/mis_classify.png)
 
 - Decreasing loss function as gradient descent is applied
